@@ -2,27 +2,27 @@
 
 import { useEffect } from "react";
 
-export default function HomePage() {
+export default function KioskPage() {
   useEffect(() => {
-    // Clear kiosk from localStorage
-    localStorage.removeItem("kiosk");
+    // Set kiosk=1 in localStorage
+    localStorage.setItem("kiosk", "1");
   }, []);
 
   const handleShopifyClick = () => {
-    // Clear kiosk from localStorage when clicking
-    localStorage.removeItem("kiosk");
+    // Set kiosk=1 in localStorage when clicking
+    localStorage.setItem("kiosk", "1");
   };
 
   return (
     <div style={{ height: "100vh", overflow: "hidden" }}>
       <a
-        href="https://quickstart-d8039cf9.myshopify.com/?kiosk=0"
+        href="https://quickstart-d8039cf9.myshopify.com/?kiosk=1"
         onClick={handleShopifyClick}
         style={{ width: "100%", height: "100%", border: "none", display: "block" }}
         target="_blank"
         rel="noopener noreferrer"
       >
-        Go to Shopify Store (Normal Mode)
+        Go to Shopify Store (Kiosk Mode)
       </a>
     </div>
   );
